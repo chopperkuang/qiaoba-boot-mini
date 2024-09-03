@@ -56,7 +56,7 @@ public class DefaultDBFieldHandler implements MetaObjectHandler {
         Object modifier = getFieldValByName("updater", metaObject);
         Long userId = WebFrameworkUtils.getLoginUserId();
         if (Objects.nonNull(userId) && Objects.isNull(modifier)) {
-            setFieldValByName("updater", userId.toString(), metaObject);
+            setFieldValByName("updater", userId, metaObject);
         }
     }
 }
